@@ -1,0 +1,16 @@
+<div class="cocktail-body">
+    <div class="col">
+        <img ngSrc="cocktail.imageUrl">
+    </div>
+    <div class="col">
+        <div class="row">
+            <div class="col-md-2">{{cocktail.name}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">{{cocktail.isAlcoholic}}</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">{{cocktail.ingredients.join('|')}}</div>
+        </div>
+    </div>
+</div>
