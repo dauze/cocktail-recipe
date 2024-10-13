@@ -15,7 +15,6 @@ export class CocktailService {
   private selectedCocktailId = signal<number | undefined>(undefined);
 
   private cocktails$ = this.http.get<Cocktail[]>(this.cocktailUrl);
-  
   private cocktail$ = toObservable(this.selectedCocktailId)
     .pipe(
     filter(Boolean),
