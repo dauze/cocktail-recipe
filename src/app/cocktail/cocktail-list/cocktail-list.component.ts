@@ -19,8 +19,7 @@ export class CocktailListComponent {
   cocktailFilter: Partial<Cocktail> = { name: '' };
   readonly cocktails = this.cocktailService.cocktails;
 
-  onCocktailSelected(id : number){
-    this.cocktailService.cocktailSelected(id);
+  trackByFunc(i: any, item: any) {
+    return item.id;  
   }
-
 }

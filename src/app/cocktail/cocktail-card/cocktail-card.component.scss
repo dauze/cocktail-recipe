@@ -1,7 +1,6 @@
 .card-container{
     padding: 0.5rem;
   }
-
 .card-body {
     border: solid;
     border-width: thin;
@@ -11,26 +10,12 @@
     position: relative;
     padding-right: 0.5rem;
 }
-
 .image {
 position: absolute;
 }
-
 .card-description{
     margin-left: 2rem;
     padding-bottom: 2rem;
-}
-.drink-type {
-    border-radius: 1rem;
-    color: white;
-    padding:0px 0.5rem
-}
-
-.alcoholic {
-    background-color: #B0C5A4 ;
-}
-.non-alcoholic {
-    background-color: #51829B ;
 }
 .card-ingredient {
     padding-right: 1.5rem;

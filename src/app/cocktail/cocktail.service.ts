@@ -12,7 +12,7 @@ export class CocktailService {
 
   private http = inject(HttpClient);
 
-  private selectedCocktailId = signal<number | undefined>(undefined);
+  private selectedCocktailId = signal<string | undefined>(undefined);
 
   private cocktails$ = this.http.get<Cocktail[]>(this.cocktailUrl);
   private cocktail$ = toObservable(this.selectedCocktailId)
@@ -28,7 +28,7 @@ export class CocktailService {
   //Selected cocktail 
   cocktails = toSignal(this.cocktails$, { initialValue: []  as Cocktail[] });
 
-  cocktailSelected(selectedcocktailId: number): void {
+  cocktailSelected(selectedcocktailId: string): void {
     this.selectedCocktailId.set(selectedcocktailId);
   }
 }
