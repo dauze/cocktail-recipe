@@ -6,7 +6,12 @@
             </div>
             <div class="col-md card-description">
                 <div class="row mt-1">
-                    <div class="col-md title">{{cocktail.name}}</div>
+                    <div class="col-md title">
+                        <span>{{cocktail.name}}</span>
+                        <div class="star" >
+                            <span class="icon-star" [ngClass]="{'active' : isFavorite()}" (click)="handleFavorite()"></span>
+                        </div>
+                    </div>
                 </div>
                 <div class="row mt-1">
                     <div class="col-md">
