@@ -12,10 +12,6 @@
     padding-right: 0.5rem;
 }
 
-.card-title {
-    font-size: large;
-    font-weight: bold;
-}
 .image {
 position: absolute;
 }
@@ -40,4 +36,8 @@ position: absolute;
     padding-right: 1.5rem;
     display: inline-block;
     font-size: small;
+}
+.image-container {
+    min-width: 180px;
+    min-height: 180px; 
 }
