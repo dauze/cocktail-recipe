@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, Signal, inject } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FavoriteCocktailService } from '../favorite-cocktail.service';
 import { Cocktail } from '../cocktail';
@@ -17,7 +17,7 @@ export class CocktailDetailComponent implements OnInit {
   private favCocktailService = inject(FavoriteCocktailService);
   private cocktailService = inject(CocktailService);
 
-  readonly cocktail = this.cocktailService.cocktail;
+  readonly cocktail:Signal<Cocktail | undefined> = this.cocktailService.cocktail;
 
   ngOnInit(): void {
     this.cocktailService.cocktailSelected(this.route.snapshot.paramMap.get('id') ?? '');
@@ -26,7 +26,7 @@ export class CocktailDetailComponent implements OnInit {
   isFavorite(){
     return this.favCocktailService.isFavorite(this.cocktail()?.id ?? '');
   }
-  
+
   handleFavorite(){
     if (this.isFavorite()){
       this.favCocktailService.removeFavorite(this.cocktail()?.id ?? '');

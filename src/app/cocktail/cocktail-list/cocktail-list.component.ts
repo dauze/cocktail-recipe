@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Signal, inject } from '@angular/core';
 import { CocktailService } from '../cocktail.service';
 import { CocktailCardComponent } from '../cocktail-card/cocktail-card.component';
 import { NgFor } from '@angular/common';
@@ -17,7 +17,7 @@ export class CocktailListComponent {
   private cocktailService = inject(CocktailService);
 
   cocktailFilter: Partial<Cocktail> = { name: '' };
-  readonly cocktails = this.cocktailService.cocktails;
+  readonly cocktails:Signal<Cocktail[]> = this.cocktailService.cocktails;
 
   trackByFunc(i: any, item: any) {
     return item.id;  
