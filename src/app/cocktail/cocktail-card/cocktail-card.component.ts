@@ -1,12 +1,12 @@
 import { Component, Input, inject } from '@angular/core';
 import { CocktailService } from '../cocktail.service';
-import { NgOptimizedImage } from '@angular/common';
+import { NgClass, NgOptimizedImage } from '@angular/common';
 import { Cocktail } from '../cocktail';
 
 @Component({
   selector: 'app-cocktail-card',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [NgOptimizedImage, NgClass],
   templateUrl: './cocktail-card.component.html',
   styleUrl: './cocktail-card.component.scss'
 })

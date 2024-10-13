@@ -1,16 +1,24 @@
-<div class="cocktail-body">
-    <div class="col">
-        <img ngSrc="cocktail.imageUrl">
-    </div>
-    <div class="col">
+<div class="card-container">
+    <div class="card-body">
         <div class="row">
-            <div class="col-md-2">{{cocktail.name}}</div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">{{cocktail.isAlcoholic}}</div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">{{cocktail.ingredients.join('|')}}</div>
+            <div class="col-md-3" style="min-width: 180px;min-height: 180px;">
+                <img [ngSrc]="cocktail.imageUrl" width="180" height="180" class="image" priority>
+            </div>
+            <div class="col-md card-description">
+                <div class="row mt-1">
+                    <div class="col-md card-title">{{cocktail.name}}</div>
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md">
+                        <span class="drink-type" [ngClass]="cocktail.isAlcoholic ? 'alcoholic' : 'non-alcoholic'">{{cocktail.isAlcoholic ? 'Alcoholic' : 'Non Alcoholic'}}</span>
+                    </div>  
+                </div>
+                <div class="row mt-1">
+                    <div class="col-md">
+                        <span class="card-ingredient" >{{cocktail.ingredients.join(' | ')}}</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

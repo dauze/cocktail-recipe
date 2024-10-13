@@ -1,4 +1,16 @@
-<div class='card-body'
-       *ngFor="let cocktail of cocktails()">
-    <app-cocktail-card [cocktail]="cocktail"></app-cocktail-card>
+<div class='row'>
+    <div class='header'>
+        <span class="title">Filters</span>
+        <div>
+            <span>Cocktail name </span>
+            <input type="text" [(ngModel)]="cocktailFilter.name" placeholder="Filter by name">
+        </div>
+    </div>
+</div>
+<div class='row'>
+    <div class='list-container'>
+        <div class='item' *ngFor="let cocktail of cocktails() | filterBy: cocktailFilter">
+            <app-cocktail-card [cocktail]="cocktail"></app-cocktail-card>
+        </div>
+    </div>
 </div>

@@ -8,7 +8,7 @@ import { filter, switchMap, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class CocktailService {
-  readonly cocktailUrl = 'cocktail';
+  readonly cocktailUrl = 'cocktails';
 
   private http = inject(HttpClient);
 
@@ -17,17 +17,17 @@ export class CocktailService {
   private cocktails$ = this.http.get<Cocktail[]>(this.cocktailUrl);
   
   private cocktail$ = toObservable(this.selectedCocktailId)
-  .pipe(
+    .pipe(
     filter(Boolean),
     switchMap(id => {
       const cocktailUrl = this.cocktailUrl + '/' + id;
       return this.http.get<Cocktail>(cocktailUrl)
-    }));
+  }));
 
   //List of all cocktails
   cocktail = toSignal(this.cocktail$);
   //Selected cocktail 
-  cocktails = toSignal(this.cocktails$);
+  cocktails = toSignal(this.cocktails$, { initialValue: []  as Cocktail[] });
 
   cocktailSelected(selectedcocktailId: number): void {
     this.selectedCocktailId.set(selectedcocktailId);

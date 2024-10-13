@@ -1,0 +1,20 @@
+.list-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+.item {
+    flex: 1 0 40%;
+}
+.body {
+    width: fit-content;
+}
+
+.header {
+    background-color: lightslategray;
+    padding: 1em;
+}
+.title {
+    font-size: large;
+    font-weight: bold;
+}
