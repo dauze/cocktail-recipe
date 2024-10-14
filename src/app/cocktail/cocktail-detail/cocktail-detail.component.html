@@ -1,46 +1,50 @@
 
-<div class="primary" *ngIf="cocktail() as cocktail">
-    <button type="button" routerLink="./cocktails"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
-        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
-      </svg> Back</button>
-    <div class="card-body">
-        <div class="row">
-            <div class="col">
-                <img [ngSrc]="cocktail.imageUrl" width="700" height="700" class="image" priority>
-            </div>
-            <div class="col-md">
-                <div class="row">
-                    <div class="col-md">
-                        <h1>{{cocktail.name}} <span class="icon-star" [ngClass]="{'active' : isFavorite()}" (click)="handleFavorite()"></span></h1>
-                    </div>
+@if (cocktail(); as cocktail) {
+    <div class="primary">
+        <button type="button" routerLink="./cocktails"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+        </svg> Back</button>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <img [ngSrc]="cocktail.imageUrl" width="700" height="700" class="image" priority>
                 </div>
-                <div class="row mt-1">
-                    <div class="col-md">
-                        <h5>Type:</h5>
+                <div class="col-md">
+                    <div class="row">
+                        <div class="col-md">
+                            <h1>{{cocktail.name}} <span class="icon-star" [ngClass]="{'active' : isFavorite()}" (click)="handleFavorite()"></span></h1>
+                        </div>
                     </div>
-                    <div class="col-sm-8 center">
-                        <span class="drink-type" [ngClass]="cocktail.isAlcoholic ? 'alcoholic' : 'non-alcoholic'">{{cocktail.isAlcoholic ? 'Alcoholic' : 'Non Alcoholic'}}</span>
-                    </div>  
-                </div>
-                <div class="row mt-1">
-                    <div class="col-md">
-                        <h5>Ingredient:</h5>
+                    <div class="row mt-1">
+                        <div class="col-md">
+                            <h5>Type:</h5>
+                        </div>
+                        <div class="col-sm-8 center">
+                            <span class="drink-type" [ngClass]="cocktail.isAlcoholic ? 'alcoholic' : 'non-alcoholic'">{{cocktail.isAlcoholic ? 'Alcoholic' : 'Non Alcoholic'}}</span>
+                        </div>  
                     </div>
-                    <div class="col-sm-8">
-                        <ul>
-                            <li *ngFor="let ingredient of cocktail.ingredients;">{{ingredient}}</li>
-                        </ul>
+                    <div class="row mt-1">
+                        <div class="col-md">
+                            <h5>Ingredient:</h5>
+                        </div>
+                        <div class="col-sm-8">
+                            <ul>
+                                @for (ingredient of cocktail.ingredients; track $index) {
+                                    <li>{{ingredient}}</li>
+                                }
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="row mt-1">
-                    <div class="col-md">
-                        <h5>Instruction:</h5>
-                    </div>
-                    <div class="col-sm-8 center margin-right">
-                        <span>{{cocktail.instructions}}</span>
+                    <div class="row mt-1">
+                        <div class="col-md">
+                            <h5>Instruction:</h5>
+                        </div>
+                        <div class="col-sm-8 center margin-right">
+                            <span>{{cocktail.instructions}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+}

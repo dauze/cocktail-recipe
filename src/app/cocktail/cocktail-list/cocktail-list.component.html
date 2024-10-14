@@ -9,8 +9,10 @@
 </div>
 <div class='row'>
     <div class='list-container'>
-        <div class='item' *ngFor="let cocktail of cocktails() | filterBy: cocktailFilter;trackBy: trackByFunc">
-            <app-cocktail-card [cocktail]="cocktail"></app-cocktail-card>
-        </div>
+        @for (cocktail of cocktails() | filterBy: cocktailFilter; track cocktail.id) {
+            <div class='item'>
+                <app-cocktail-card [cocktail]="cocktail"></app-cocktail-card>
+            </div>
+        }
     </div>
 </div>

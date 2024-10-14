@@ -19,8 +19,4 @@ export class CocktailListComponent {
 
   cocktailFilter: Partial<Cocktail> = { name: '' };
   readonly cocktails:Signal<Cocktail[]> = this.cocktailService.cocktails;
-
-  trackByFunc(i: any, item: any) {
-    return item.id;  
-  }
 }
