@@ -15,7 +15,7 @@
                 </div>
                 <div class="row mt-1">
                     <div class="col-md">
-                        <span class="drink-type" [ngClass]="cocktail.isAlcoholic ? 'alcoholic' : 'non-alcoholic'">{{cocktail.isAlcoholic ? 'Alcoholic' : 'Non Alcoholic'}}</span>
+                        <span id="star-{{cocktail.id}}" class="drink-type" [ngClass]="cocktail.isAlcoholic ? 'alcoholic' : 'non-alcoholic'">{{cocktail.isAlcoholic ? 'Alcoholic' : 'Non Alcoholic'}}</span>
                     </div>  
                 </div>
                 <div class="row mt-1">
