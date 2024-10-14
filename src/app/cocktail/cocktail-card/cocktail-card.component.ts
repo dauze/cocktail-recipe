@@ -1,4 +1,4 @@
-import { Component, Input, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { NgClass, NgOptimizedImage } from '@angular/common';
 import { Cocktail } from '../cocktail';
 import { FavoriteCocktailService } from '../favorite-cocktail.service';
@@ -10,7 +10,8 @@ import { CocktailDetailComponent } from '../cocktail-detail/cocktail-detail.comp
   standalone: true,
   imports: [NgOptimizedImage, NgClass, CocktailDetailComponent, RouterModule],
   templateUrl: './cocktail-card.component.html',
-  styleUrl: './cocktail-card.component.scss'
+  styleUrl: './cocktail-card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CocktailCardComponent {
   @Input({ required: true }) cocktail: Cocktail;

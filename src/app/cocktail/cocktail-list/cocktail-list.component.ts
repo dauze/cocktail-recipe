@@ -1,4 +1,4 @@
-import { Component, Signal, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Signal, inject } from '@angular/core';
 import { CocktailService } from '../cocktail.service';
 import { CocktailCardComponent } from '../cocktail-card/cocktail-card.component';
 import { NgFor } from '@angular/common';
@@ -11,7 +11,8 @@ import { Cocktail } from '../cocktail';
   standalone: true,
   imports: [CocktailCardComponent, NgFor, FormsModule, FilterPipeModule],
   templateUrl: './cocktail-list.component.html',
-  styleUrl: './cocktail-list.component.scss'
+  styleUrl: './cocktail-list.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CocktailListComponent {
   private cocktailService = inject(CocktailService);

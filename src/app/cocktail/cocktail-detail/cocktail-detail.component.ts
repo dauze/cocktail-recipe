@@ -1,4 +1,4 @@
-import { Component, OnInit, Signal, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Signal, inject } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FavoriteCocktailService } from '../favorite-cocktail.service';
 import { Cocktail } from '../cocktail';
@@ -10,7 +10,8 @@ import { NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
   standalone: true,
   imports: [NgOptimizedImage, NgClass, NgIf, NgFor, RouterModule],
   templateUrl: './cocktail-detail.component.html',
-  styleUrl: './cocktail-detail.component.scss'
+  styleUrl: './cocktail-detail.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CocktailDetailComponent implements OnInit {
   private route = inject(ActivatedRoute);
