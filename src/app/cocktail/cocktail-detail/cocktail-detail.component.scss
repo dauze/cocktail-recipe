@@ -1,3 +1,21 @@
-.card-body{
+img {
+    object-fit: cover!important;
+    width: 300px;
+}
+
+.cocktail-detail-content {
+    display: flex;
+    justify-content: space-between;
     padding: 0 0.5rem 2rem;
+
+    & > * {
+    justify-content: center;
+    flex: auto;
+    max-width: 50%;
+    &:last-child {
+        flex-direction: column;
+        align-items: start;
+        padding: 8px;
+    }
+    }
 }

@@ -2,43 +2,31 @@
 
 html, body { height: 100%; padding: 0px; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.container {
-  max-width: 50rem;
-  padding: 0px!important;
-}
-
 .primary-color {
   background-color: rgb(165, 189, 210);
 }
 
-.cocktail-header{
+.header{
     @extend .primary-color;
     padding:0.3rem ;
 }
 
 span.icon-star {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
-
   &:hover, &.active {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='yellow' stroke='%23111' stroke-width='1' stroke-linecap='round' stroke-linejoin='round' class='feather feather-star'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'%3E%3C/polygon%3E%3C/svg%3E");
   }
 }
-
-.center {
-  align-content:center
-}
-.margin-right{
-  margin-right: 1rem;
-}
-
-.drink-type {
+span.drink-type {
   border-radius: 1rem;
   color: white;
-  padding:0px 0.5rem;
+  padding:0 0.5rem 0.2rem;
+  &.alcoholic {
+    background-color: #51829B ;
+  }
+  &.non-alcoholic {
+    background-color: #7ea866 ;
+  }
 }
-.drink-type.alcoholic {
-  background-color: #51829B ;
-}
-.drink-type.non-alcoholic {
-  background-color: #B0C5A4 ;
-}
+
+
