@@ -23,7 +23,6 @@ export class CocktailDetailComponent implements OnInit {
   ngOnInit(): void {
     this.cocktailService.cocktailSelected(this.route.snapshot.paramMap.get('id') ?? '');
   }
-
   handleFavorite(): void{
     if (this.isFavorite()) this.favCocktailService.removeFavorite(this.cocktail()?.id ?? '');
     else this.favCocktailService.addFavorite(this.cocktail()?.id ?? '');

@@ -16,7 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CocktailCardComponent {
-  @Input({ required: true }) cocktail: Cocktail;
+  @Input({ required: true }) cocktail!: Cocktail;
   private favCocktailService = inject(FavoriteCocktailService);
 
   handleFavorite(): void{

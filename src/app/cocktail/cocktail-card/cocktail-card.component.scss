@@ -13,6 +13,10 @@ img {
     width: 180px;
 }
 
+.card-ingredient{
+  font-size: small;
+}
+
 .cocktail-card {
     border-radius: 1rem;
     overflow: hidden;
@@ -29,7 +33,6 @@ img {
         &:last-child {
           flex-direction: column;
           align-items: start;
-
         }
       }
     }
