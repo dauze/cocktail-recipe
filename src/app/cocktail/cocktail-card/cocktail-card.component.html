@@ -4,11 +4,19 @@
         <div class="col"> 
             <img mat-card-image [src]="cocktail.imageUrl" />
         </div>
-        <div class="col"> 
-            <a routerLink="/cocktails/{{cocktail.id}}"><h2>{{cocktail.name}}</h2></a>
-            <span id="star-{{cocktail.id}}" class="icon-star top-right-corner" [ngClass]="{'active' : isFavorite()}" (click)="handleFavorite()"></span> 
-            <span class="drink-type" [ngClass]="cocktail.isAlcoholic ? 'alcoholic' : 'non-alcoholic'">{{cocktail.isAlcoholic ? 'Alcoholic' : 'Non Alcoholic'}}</span>
-            <p class="card-ingredient" >{{cocktail.ingredients.join(' | ')}}</p>
+        <div class="col">
+            <div class="top-right-corner" (click)="handleFavorite()">
+                <span id="star-{{cocktail.id}}" class="icon-star" [ngClass]="{'active' : isFavorite()}"></span> 
+            </div>
+            <div class="h3">
+                <a routerLink="/cocktails/{{cocktail.id}}"> <strong>{{cocktail.name}}</strong></a>
+            </div>
+            <div class="p-2">
+                <span class="drink-type" [ngClass]="cocktail.isAlcoholic ? 'alcoholic' : 'non-alcoholic'">{{cocktail.isAlcoholic ? 'Alcoholic' : 'Non Alcoholic'}}</span>
+            </div>
+            <div class="p-2">
+                <p class="card-ingredient" >{{cocktail.ingredients.join(' | ')}}</p>
+            </div>
         </div>
     </mat-card-content>
 </mat-card>

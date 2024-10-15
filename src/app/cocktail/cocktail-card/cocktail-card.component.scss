@@ -2,6 +2,9 @@
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
 }
 
 img {
@@ -26,7 +29,7 @@ img {
         &:last-child {
           flex-direction: column;
           align-items: start;
-          padding: 8px;
+
         }
       }
     }
