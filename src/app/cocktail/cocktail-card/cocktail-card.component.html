@@ -6,7 +6,7 @@
         </div>
         <div class="col">
             <div id="star-{{cocktail.id}}" class="top-right-corner" (click)="handleFavorite()">
-                <span [ngClass]="{'active icon-star' : isFavorite(), 'icon-star' : !isFavorite() }"></span> 
+                <span [ngClass]="isFavorite() ?  'active icon-star' : 'icon-star'"></span> 
             </div>
             <div class="h5">
                 <a routerLink="/cocktails/{{cocktail.id}}"> <strong>{{cocktail.name}}</strong></a>

@@ -10,7 +10,7 @@
                 </div>
                 <div class="col cocktail-details">
                     <div id="star-{{cocktail.id}}" class="row" >
-                        <h1><strong>{{cocktail.name}}</strong> <span  class="icon-star" [ngClass]="{'active' : isFavorite()}" (click)="handleFavorite()"></span></h1>
+                        <h1><strong>{{cocktail.name}}</strong> <span [ngClass]="isFavorite() ?  'active icon-star' : 'icon-star'"></span></h1>
                     </div>
                     <div class="row mt-1">
                         <div class="col">
