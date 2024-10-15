@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { NgClass, NgOptimizedImage } from '@angular/common';
 import { Cocktail } from '../cocktail';
 import { FavoriteCocktailService } from '../favorite-cocktail.service';
@@ -18,12 +18,10 @@ import { MatButtonModule } from '@angular/material/button';
 export class CocktailCardComponent {
   @Input({ required: true }) cocktail: Cocktail;
   private favCocktailService = inject(FavoriteCocktailService);
-  private cd = inject(ChangeDetectorRef)
 
   handleFavorite(): void{
     if (this.isFavorite()) {this.favCocktailService.removeFavorite(this.cocktail.id);}
     else {this.favCocktailService.addFavorite(this.cocktail.id);}
-    this.cd.markForCheck();
   }
   isFavorite(): boolean{
     return this.favCocktailService.isFavorite(this.cocktail.id);
