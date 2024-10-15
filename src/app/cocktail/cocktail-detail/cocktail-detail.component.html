@@ -9,8 +9,8 @@
                     <img [ngSrc]="cocktail.imageUrl" width="700" height="700" class="image" priority>
                 </div>
                 <div class="col cocktail-details">
-                    <div class="row">
-                        <h1><strong>{{cocktail.name}}</strong> <span class="icon-star" [ngClass]="{'active' : isFavorite()}" (click)="handleFavorite()"></span></h1>
+                    <div id="star-{{cocktail.id}}" class="row" >
+                        <h1><strong>{{cocktail.name}}</strong> <span  class="icon-star" [ngClass]="{'active' : isFavorite()}" (click)="handleFavorite()"></span></h1>
                     </div>
                     <div class="row mt-1">
                         <div class="col">
