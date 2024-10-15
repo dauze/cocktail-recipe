@@ -1,29 +1,13 @@
-<div class="card-container">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-3 image-container">
-                <img [ngSrc]="cocktail.imageUrl" width="180" height="180" class="image" priority>
-            </div>
-            <div class="col-md card-description">
-                <div class="row mt-1">
-                    <div class="col-md title">
-                        <a routerLink="/cocktails/{{cocktail.id}}">{{cocktail.name}}</a>
-                        <div class="star" >
-                            <span class="icon-star" [ngClass]="{'active' : isFavorite()}" (click)="handleFavorite()"></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-1">
-                    <div class="col-md">
-                        <span id="star-{{cocktail.id}}" class="drink-type" [ngClass]="cocktail.isAlcoholic ? 'alcoholic' : 'non-alcoholic'">{{cocktail.isAlcoholic ? 'Alcoholic' : 'Non Alcoholic'}}</span>
-                    </div>  
-                </div>
-                <div class="row mt-1">
-                    <div class="col-md">
-                        <span class="card-ingredient" >{{cocktail.ingredients.join(' | ')}}</span>
-                    </div>
-                </div>
-            </div>
+<mat-card class="cocktail-card">
+    <mat-card-content class="cocktail-card-content">
+        <div class="col"> 
+            <img mat-card-image [src]="cocktail.imageUrl" />
         </div>
-    </div>
-</div>
+        <div class="col"> 
+            <a routerLink="/cocktails/{{cocktail.id}}"><h2>{{cocktail.name}}</h2></a>
+            <span id="star-{{cocktail.id}}" class="icon-star top-right-corner" [ngClass]="{'active' : isFavorite()}" (click)="handleFavorite()"></span> 
+            <span class="drink-type" [ngClass]="cocktail.isAlcoholic ? 'alcoholic' : 'non-alcoholic'">{{cocktail.isAlcoholic ? 'Alcoholic' : 'Non Alcoholic'}}</span>
+            <p class="card-ingredient" >{{cocktail.ingredients.join(' | ')}}</p>
+        </div>
+    </mat-card-content>
+</mat-card>

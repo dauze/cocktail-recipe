@@ -1,18 +1,19 @@
 @import "bootstrap/scss/bootstrap-grid";
 
+html, body { height: 100%; padding: 0px; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .container {
   max-width: 50rem;
-  padding: 5rem
+  padding: 0px!important;
 }
 
-.title {
-  font-size: large;
-  font-weight: bold;
-  margin-right:0.7rem ;
+.primary-color {
+  background-color: rgb(165, 189, 210);
 }
 
-.primary {
-  background-color: lightslategray;
+.cocktail-header{
+    @extend .primary-color;
+    padding:0.3rem ;
 }
 
 span.icon-star {
@@ -33,11 +34,11 @@ span.icon-star {
 .drink-type {
   border-radius: 1rem;
   color: white;
-  padding:0px 0.5rem
+  padding:0px 0.5rem;
 }
-.alcoholic {
+.drink-type.alcoholic {
   background-color: #51829B ;
 }
-.non-alcoholic {
+.drink-type.non-alcoholic {
   background-color: #B0C5A4 ;
 }

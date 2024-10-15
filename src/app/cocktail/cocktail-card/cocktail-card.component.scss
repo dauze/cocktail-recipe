@@ -1,31 +1,33 @@
-.card-container{
-    padding: 0.5rem;
-  }
-.card-body {
-    border: solid;
-    border-width: thin;
-    border-color: grey;
+.top-right-corner {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+img {
+    object-fit: cover!important;
+    height: 100%;
+    width: 180px;
+}
+
+.cocktail-card {
     border-radius: 1rem;
     overflow: hidden;
-    position: relative;
-    padding-right: 0.5rem;
-}
-.image {
-position: absolute;
-}
-.card-description{
-    margin-left: 2rem;
-    padding-bottom: 2rem;
-}
-.card-ingredient {
-    padding-right: 1.5rem;
-    display: inline-block;
-    font-size: small;
-}
-.image-container {
-    min-width: 180px;
-    min-height: 180px; 
-}
-.star {
-    float: right;
+
+    .cocktail-card-content {
+      display: flex;
+      padding: 0;
+      justify-content: space-between;
+
+      & > * {
+        justify-content: center;
+        flex: auto;
+        max-width: 50%;
+        &:last-child {
+          flex-direction: column;
+          align-items: start;
+          padding: 8px;
+        }
+      }
+    }
 }

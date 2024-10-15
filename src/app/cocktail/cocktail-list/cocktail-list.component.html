@@ -1,18 +1,10 @@
-<div class='row'>
-    <div class='primary'>
-        <h3>Filters</h3>
-        <div>
-            <span>Cocktail name </span>
-            <input type="text" [(ngModel)]="cocktailFilter.name" placeholder="Filter by name">
-        </div>
-    </div>
+<div class='cocktail-header'>
+    <h3>Filters</h3>
+    <span>Cocktail name</span>
+    <input type="text" [(ngModel)]="cocktailFilter.name" placeholder="Filter by name">
 </div>
-<div class='row'>
-    <div class='list-container'>
-        @for (cocktail of cocktails() | filterBy: cocktailFilter; track cocktail.id) {
-            <div class='item'>
-                <app-cocktail-card [cocktail]="cocktail"></app-cocktail-card>
-            </div>
-        }
-    </div>
+<div class='responsive-grid-padded'>
+    @for (cocktail of cocktails() | filterBy: cocktailFilter; track cocktail.id) {
+        <app-cocktail-card [cocktail]="cocktail"></app-cocktail-card>
+    }
 </div>
