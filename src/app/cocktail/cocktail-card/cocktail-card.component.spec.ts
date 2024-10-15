@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CocktailCardComponent } from './cocktail-card.component';
+import { provideHttpClient } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
 
 describe('CocktailCardComponent', () => {
   let component: CocktailCardComponent;
@@ -8,7 +10,11 @@ describe('CocktailCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CocktailCardComponent]
+      imports: [CocktailCardComponent],
+      providers: [
+        provideHttpClient(),
+        provideRouter([])
+      ]
     })
     .compileComponents();
     

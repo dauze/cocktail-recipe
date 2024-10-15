@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CocktailListComponent } from './cocktail-list.component';
+import { provideHttpClient } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
 
 describe('CocktailListComponent', () => {
   let component: CocktailListComponent;
@@ -8,11 +10,12 @@ describe('CocktailListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CocktailListComponent]
-    })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(CocktailListComponent);
+      imports: [CocktailListComponent],
+      providers: [
+        provideHttpClient()
+      ]
+    }).compileComponents();
+    fixture =TestBed.createComponent(CocktailListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -20,4 +23,4 @@ describe('CocktailListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});
+})
