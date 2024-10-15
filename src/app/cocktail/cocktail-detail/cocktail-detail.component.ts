@@ -24,17 +24,11 @@ export class CocktailDetailComponent implements OnInit {
     this.cocktailService.cocktailSelected(this.route.snapshot.paramMap.get('id') ?? '');
   }
 
-  isFavorite(){
+  handleFavorite(): void{
+    if (this.isFavorite()) this.favCocktailService.removeFavorite(this.cocktail()?.id ?? '');
+    else this.favCocktailService.addFavorite(this.cocktail()?.id ?? '');
+  }
+  isFavorite(): boolean{
     return this.favCocktailService.isFavorite(this.cocktail()?.id ?? '');
   }
-
-  handleFavorite(){
-    if (this.isFavorite()){
-      this.favCocktailService.removeFavorite(this.cocktail()?.id ?? '');
-    }
-    else {
-      this.favCocktailService.addFavorite(this.cocktail()?.id ?? '');
-    }
-  }
-
 }
