@@ -1,7 +1,7 @@
 <div class='header'>
     <h3><strong>Filters</strong></h3>
     <span>Cocktail name</span>
-    <input type="text" [(ngModel)]="cocktailFilter.name" placeholder="Filter by name">
+    <input type="text" class="filter" [(ngModel)]="cocktailFilter.name" placeholder="Filter by name">
 </div>
 <div class='responsive-grid-padded'>
     @for (cocktail of cocktails() | filterBy: cocktailFilter; track cocktail.id) {
