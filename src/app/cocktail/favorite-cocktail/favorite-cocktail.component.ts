@@ -9,9 +9,9 @@ import { NgClass, NgIf } from '@angular/common';
   template: `@if (id) {
     <span (click)="handleFavorite()" id="star-{{id}}" class="icon-star" [ngClass]="{'active' : isFavorite()}"></span> 
     }`,
-  styleUrl: './favorite.component.scss'
+  styleUrl: './favorite-cocktail.component.scss'
 })
-export class FavoriteComponent {
+export class FavoriteCocktailComponent {
   @Input({ required: true }) id!: string;
   private favCocktailService = inject(FavoriteCocktailService);
   //Add or remove to favorite

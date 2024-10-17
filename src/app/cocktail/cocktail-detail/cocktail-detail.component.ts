@@ -3,12 +3,12 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Cocktail } from '../cocktail';
 import { CocktailService } from '../cocktail.service';
 import { NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
-import { FavoriteComponent } from '../favorite/favorite.component';
+import { FavoriteCocktailComponent } from '../favorite-cocktail/favorite-cocktail.component';
 
 @Component({
   selector: 'app-cocktail-detail',
   standalone: true,
-  imports: [NgOptimizedImage, NgClass, NgIf, NgFor, RouterModule, FavoriteComponent],
+  imports: [NgOptimizedImage, NgClass, NgIf, NgFor, RouterModule, FavoriteCocktailComponent],
   templateUrl: './cocktail-detail.component.html',
   styleUrl: './cocktail-detail.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
