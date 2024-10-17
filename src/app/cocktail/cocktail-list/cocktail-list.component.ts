@@ -16,7 +16,7 @@ import { Cocktail } from '../cocktail';
 })
 export class CocktailListComponent {
   private cocktailService = inject(CocktailService);
-
+  //Filter to search by name
   cocktailFilter: Partial<Cocktail> = { name: '' };
   readonly cocktails:Signal<Cocktail[]> = this.cocktailService.cocktails;
 }

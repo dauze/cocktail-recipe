@@ -8,7 +8,7 @@
                 </div>
                 <div class="col cocktail-details">
                     <div class="row" >
-                        <h1><strong>{{cocktail.name}}</strong> <span id="star-{{cocktail.id}}" (click)="handleFavorite()" class="icon-star star" [ngClass]="{'active' : isFavorite()}"></span></h1>
+                        <h1><strong>{{cocktail.name}}</strong>  <app-favorite [id]="cocktail.id"></app-favorite></h1>
                     </div>
                     <div class="row mt-1">
                         <div class="col">

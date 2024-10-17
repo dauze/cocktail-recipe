@@ -9,9 +9,8 @@ import { filter, switchMap } from 'rxjs';
 })
 export class CocktailService {
   readonly cocktailUrl = 'cocktails';
-
   private http = inject(HttpClient);
-
+  //id of one specific cocktail to search
   private selectedCocktailId = signal<string | undefined>(undefined);
 
   private cocktails$ = this.http.get<Cocktail[]>(this.cocktailUrl);
