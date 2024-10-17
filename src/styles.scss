@@ -1,6 +1,7 @@
 @import "bootstrap/scss/bootstrap-grid";
 @import "bootstrap/scss/bootstrap";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
 html, body { height: 100%; padding: 0px; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .primary-color {
@@ -31,7 +32,7 @@ span.icon-star {
 span.drink-type {
   border-radius: 1rem;
   color: white;
-  padding:0 0.5rem 0.2rem;
+  padding:0 0.3rem 0.1rem;
   &.alcoholic {
     background-color: #51829B ;
   }
