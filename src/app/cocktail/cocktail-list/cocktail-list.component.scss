@@ -2,7 +2,12 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(365px, 10fr));
     gap: 0.6rem;
-    padding: 0.6rem;
+    
+    @media (width >= 380px) {
+        & {
+            padding: 0.6rem;
+        }
+      }
 }
 
 @media (width >= 600px) {
